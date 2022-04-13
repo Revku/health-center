@@ -3,6 +3,7 @@ import styled, { ThemeProvider } from 'styled-components'
 
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
+import Navigation from 'components/Navigation/Navigation';
 
 const Wrapper = styled.div``;
 
@@ -11,6 +12,7 @@ const MainTemplate = ({children}) => {
     <ThemeProvider theme={theme}>
         <Wrapper>
             <GlobalStyle />
+            <Navigation />
             { children }
         </Wrapper>
     </ThemeProvider>
