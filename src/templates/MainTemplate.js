@@ -4,6 +4,7 @@ import styled, { ThemeProvider } from 'styled-components'
 import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
 import Navigation from 'components/Navigation/Navigation';
+import Footer from 'components/Footer/Footer';
 
 const Wrapper = styled.div`
   display: grid;
@@ -22,7 +23,9 @@ const MainTemplate = ({children}) => {
           <div>
             { children }
           </div>
-          <div>Footer</div>
+          <div>
+            <Footer />
+          </div>
         </Wrapper>
     </ThemeProvider>
   )
