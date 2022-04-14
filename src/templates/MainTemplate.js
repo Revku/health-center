@@ -5,15 +5,24 @@ import { GlobalStyle } from 'assets/styles/GlobalStyle';
 import { theme } from 'assets/styles/theme';
 import Navigation from 'components/Navigation/Navigation';
 
-const Wrapper = styled.div``;
+const Wrapper = styled.div`
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+`;
 
 const MainTemplate = ({children}) => {
   return (
     <ThemeProvider theme={theme}>
+        <GlobalStyle />
         <Wrapper>
-            <GlobalStyle />
+          <div>
             <Navigation />
+          </div>
+          <div>
             { children }
+          </div>
+          <div>Footer</div>
         </Wrapper>
     </ThemeProvider>
   )

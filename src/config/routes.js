@@ -1,29 +1,32 @@
-import Home from "views/Home"
+// Icons
+import bmiIcon from "assets/icons/bmi.svg"
+import waterIcon from "assets/icons/water.svg"
+import caloriesIcon from "assets/icons/calories.svg"
+import whrIcon from "assets/icons/whr.svg"
 
 export const routes = [
     {
-        name: 'Strona Główna',
-        path: '/',
-        component: <Home />,
-    },
-    {
         name: 'Kalkulator BMI',
         path: '/bmi',
-        component: <Home />,
+        component: <div></div>,
+        icon: bmiIcon,
     },
     {
         name: 'Zapotrzebowanie wody',
         path: '/water',
-        component: <Home />,
+        component: <div></div>,
+        icon: waterIcon,
     },
     {
         name: 'Kalkulator kalorii',
         path: '/calories',
-        component: <Home />,
+        component: <div></div>,
+        icon: caloriesIcon,
     },
     {
         name: 'Kalkulator WHR',
         path: '/whr',
-        component: <Home />,
+        component: <div></div>,
+        icon: whrIcon,
     },
 ]

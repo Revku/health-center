@@ -7,9 +7,9 @@ import menu from 'assets/icons/menu.svg'
 import MobileMenu from 'components/MobileMenu/MobileMenu';
 
 import { routes } from 'config/routes'
-import { computeHeadingLevel } from '@testing-library/react'
 
 const mobileWidth = '1000';
+
 const Wrapper = styled.div`
     padding: 30px;
     display: flex;

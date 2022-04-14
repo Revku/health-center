@@ -10,6 +10,7 @@ const Root = () => {
     <MainTemplate>
       <BrowserRouter>
         <Routes>
+          <Route path="/" element={<Home />} />
           {
             routes.map(route => {
               return <Route key={route.path} path={route.path} element={route.component}></Route>
