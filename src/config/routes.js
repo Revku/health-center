@@ -4,11 +4,18 @@ import waterIcon from "assets/icons/water.svg"
 import caloriesIcon from "assets/icons/calories.svg"
 import whrIcon from "assets/icons/whr.svg"
 
+// Views
+import BMI from "views/BMI"
+
 export const routes = [
+    {
+        name: 'Strona Główna',
+        path: '/',
+    },
     {
         name: 'Kalkulator BMI',
         path: '/bmi',
-        component: <div></div>,
+        component: <BMI />,
         icon: bmiIcon,
     },
     {

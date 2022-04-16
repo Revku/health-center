@@ -4,7 +4,7 @@ export const theme = {
         text: '#FFFFFF',
         primary: '#23263C',
         secondary: '#393D59',
-        gradient: 'background: linear-gradient(90deg, #9916FF 0%, #424FC2 104.62%)',
+        gradient: 'linear-gradient(90deg, #9916FF 0%, #424FC2 104.62%)',
     },
     font: {
         family: 'Montserrat',

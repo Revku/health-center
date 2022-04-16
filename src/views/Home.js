@@ -50,6 +50,7 @@ const Home = () => {
       
       <Items>
         { routes.map(route => {
+            if (!route.icon) { return null }
             return (
               <HomeItem key={route.path} route={route} />
             )

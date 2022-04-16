@@ -12,6 +12,7 @@ const Item = styled.a`
   width: 90vw;
   text-align: center;
   text-decoration: none;
+  transition: background-color 0.3s ease-in-out;
 
   @media (min-width: 1000px) {
     width: 200px;
@@ -19,6 +20,10 @@ const Item = styled.a`
     flex-direction: column;
     justify-content: space-between;
     margin: 0 10px;
+   }
+
+   :hover {
+    background-color: ${props => props.theme.colors.secondary};
    }
 `;
 
