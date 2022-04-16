@@ -17,12 +17,14 @@ const Paragraph = styled.p`
     text-align: center;
     font-weight: ${({ theme }) => theme.font.weight.semibold};
     font-size: 14px;
+    z-index: 0;
 `;
 
 const Logo = styled.img`
     margin-left: 10px;
     transform: translateY(5px);
     height: 21px;
+    z-index: 0;
 `;
 
 const Footer = () => {

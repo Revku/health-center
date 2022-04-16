@@ -17,6 +17,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     padding: 30px;
     transition: right 0.3s ease-in-out;
+    z-index: 2;
 `;
 
 const Header = styled.div`
