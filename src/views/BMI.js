@@ -5,6 +5,7 @@ import Box from 'components/Box/Box'
 import FormField from 'components/FormField/FormField'
 import Button from 'components/Button/Button'
 import Result from 'components/Result/Result'
+import Highlight from 'components/Highlight/Highlight'
 
 const Form = styled.div`
   margin: 50px 0;
@@ -19,6 +20,12 @@ const Wrapper = styled.div`
   justify-content: center;
 `;
 
+const Description = styled.p`
+  font-size: 14px;
+  margin-top: 30px;
+  max-width: 600px;
+`;
+
 const BMI = () => {
     const [weight, setWeight] = React.useState('');
     const [height, setHeight] = React.useState('');
@@ -26,6 +33,15 @@ const BMI = () => {
     const [bmiCategory, setBmiCategory] = React.useState('');
     const [bmiCategoryColor, setBmiCategoryColor] = React.useState('');
     const [error, setError] = React.useState('');
+
+    const appReset = () => {
+        setWeight('');
+        setHeight('');
+        setBmi('');
+        setBmiCategory('');
+        setBmiCategoryColor('');
+        setError('');
+    }
 
     const calculateBMI = () => {
         if (!weight || !height) {
@@ -64,40 +80,43 @@ const BMI = () => {
       <Wrapper>
         <Box>
           <h2>Kalkulator BMI</h2>
+          <Description>Wskaźnik masy ciała (body mass index – BMI) jest obecnie najczęściej stosowaną metodą oceny nadwagi czy otyłości. Jest to iloraz masy ciała wyrażonej w kilogramach i wzrostu (w metrach) podniesionego do kwadratu. Pozwala on na rozróżnienie niedowagi, prawidłowej masy ciała, nadwagi oraz różnych stopni otyłości.</Description>
 
-          <Form>
-            <FormField
-                id="height"
-                label="Wzrost (w cm)"
-                type="number"
-                value={height}
-                onChange={(event) => setHeight(event.target.value)}
-                placeholder='Wpisz swój wzrost (np. 180)'
-            />
+          { bmi ? (
+            <>
+              <Result>
+                <p>Twoje BMI wynosi <Highlight>{bmi}</Highlight></p>
+                <p>Twoja kategoria to <Highlight>{bmiCategory}</Highlight></p>
+              </Result>
+              <Button onClick={appReset}>Powrót do aplikacji</Button>
+            </>
+          ) : (
+            <>
+              <Form>
+                <FormField
+                    id="height"
+                    label="Wzrost (w cm)"
+                    type="number"
+                    value={height}
+                    onChange={(event) => setHeight(event.target.value)}
+                    placeholder='Wpisz swój wzrost (np. 180)'
+                />
 
-            <FormField
-                id="weight"
-                label="Waga (w kg)"
-                type="number"
-                value={weight}
-                onChange={(event) => setWeight(event.target.value)}
-                placeholder='Wpisz swoją wagę (np. 70)'
-            />
-            {error && <p style={{ color: 'red' }}>{error}</p>}
+                <FormField
+                    id="weight"
+                    label="Waga (w kg)"
+                    type="number"
+                    value={weight}
+                    onChange={(event) => setWeight(event.target.value)}
+                    placeholder='Wpisz swoją wagę (np. 70)'
+                />
+                {error && <p style={{ color: 'red' }}>{error}</p>}
+              </Form>
 
-          </Form>
-
-          <Button onClick={calculateBMI}>Oblicz</Button>
+              <Button onClick={calculateBMI}>Oblicz</Button>
+            </>
+          ) }
         </Box>
-        {
-          bmi ? (
-            <Result 
-              title={bmi}
-              paragraph={bmiCategory}
-              color={bmiCategoryColor}
-            />
-          ) : null
-        }
       </Wrapper>
     )
 }

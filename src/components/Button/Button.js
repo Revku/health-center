@@ -10,9 +10,9 @@ const StyledButton = styled.button`
     cursor: pointer;
 `;
 
-const Button = ({onClick}) => {
+const Button = ({onClick, children}) => {
   return (
-    <StyledButton onClick={onClick}>Oblicz</StyledButton>
+    <StyledButton onClick={onClick}>{children}</StyledButton>
   )
 }
 

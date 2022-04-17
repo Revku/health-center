@@ -1,28 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import Box from 'components/Box/Box'
-
-const Title = styled.div`
-    text-align: center;
-    font-size: 25px;
-    font-weight: ${({theme}) => theme.font.weight.bold};
+const Wrapper = styled.div`
+  margin: 30px 0;
 `;
 
-const Paragraph = styled.p`
-    font-size: 15px;
-    margin-top: 20px;
-    text-align: center;
+const Title = styled.h3`
+  font-size: 18px;
+  font-weight: ${({ theme }) => theme.font.weight.extraBold};
+  letter-spacing: 0.17em;
+  background: linear-gradient(90deg, #9916FF 0%, #424FC2 104.62%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  margin-bottom: 15px;
 `;
 
-const Result = ({title, paragraph, color}) => {
+const Result = ({children}) => {
   return (
-    <>
-        <Box>
-            <Title style={{ color: color }}>{title}</Title>
-            <Paragraph>{paragraph}</Paragraph>
-        </Box>
-    </>
+    <Wrapper>
+      <Title>TWOJE WYNIKI</Title>
+      {children}
+    </Wrapper>
   )
 }
 
