@@ -6,6 +6,7 @@ import whrIcon from "assets/icons/whr.svg"
 
 // Views
 import BMI from "views/BMI"
+import Water from "views/Water"
 
 export const routes = [
     {
@@ -21,7 +22,7 @@ export const routes = [
     {
         name: 'Zapotrzebowanie wody',
         path: '/water',
-        component: <div></div>,
+        component: <Water />,
         icon: waterIcon,
     },
     {

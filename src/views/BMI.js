@@ -6,10 +6,8 @@ import FormField from 'components/FormField/FormField'
 import Button from 'components/Button/Button'
 import Result from 'components/Result/Result'
 import Highlight from 'components/Highlight/Highlight'
-
-const Form = styled.div`
-  margin: 50px 0;
-`;
+import Description from 'components/Description/Description'
+import FormWrapper from 'components/FormWrapper/FormWrapper'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -18,12 +16,6 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-`;
-
-const Description = styled.p`
-  font-size: 14px;
-  margin-top: 30px;
-  max-width: 600px;
 `;
 
 const BMI = () => {
@@ -92,7 +84,7 @@ const BMI = () => {
             </>
           ) : (
             <>
-              <Form>
+              <FormWrapper>
                 <FormField
                     id="height"
                     label="Wzrost (w cm)"
@@ -111,7 +103,7 @@ const BMI = () => {
                     placeholder='Wpisz swoją wagę (np. 70)'
                 />
                 {error && <p style={{ color: 'red' }}>{error}</p>}
-              </Form>
+              </FormWrapper>
 
               <Button onClick={calculateBMI}>Oblicz</Button>
             </>
