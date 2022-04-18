@@ -13,9 +13,9 @@ const Root = () => {
           {
             routes.map(route => {
               if (route.path === '/') {
-                return <Route key={route.path} path={route.path} element={<Home />}></Route>
+                return <Route exact key={route.path} path={route.path} element={<Home />}></Route>
               } else {
-                return <Route key={route.path} path={route.path} element={route.component}></Route>
+                return <Route exact key={route.path} path={route.path} element={route.component}></Route>
               }
             })
           }
