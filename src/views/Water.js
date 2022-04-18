@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import Box from 'components/Box/Box'
 import Description from 'components/Description/Description'
@@ -8,15 +7,7 @@ import Button from 'components/Button/Button'
 import FormWrapper from 'components/FormWrapper/FormWrapper'
 import Result from 'components/Result/Result'
 import Highlight from 'components/Highlight/Highlight'
-
-const Wrapper = styled.div`
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-`;
+import AppWrapper from 'components/AppWrapper/AppWrapper'
 
 const Water = () => {
     const [weight, setWeight] = React.useState('');
@@ -47,7 +38,7 @@ const Water = () => {
     }
 
     return (
-        <Wrapper>
+        <AppWrapper>
             <Box>
                 <h2>Zapotrzebowanie wody</h2>
                 <Description>Woda ma istotne znaczenie dla przebiegu procesu trawienia – ułatwia nam spożywanie, trawienie i wykorzystanie pożywienia. Pełni również funkcję ochronną dla mózgu, gałki ocznej i rdzenia kręgowego, a u kobiet ciężarnych – również płodu. Odpowiednie nawodnienie jest również niezbędne dla prawidłowej pracy stawów.</Description>
@@ -78,7 +69,7 @@ const Water = () => {
                     </>
                 )}
             </Box>
-        </Wrapper>
+        </AppWrapper>
     )
 }
 

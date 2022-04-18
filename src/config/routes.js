@@ -7,6 +7,7 @@ import whrIcon from "assets/icons/whr.svg"
 // Views
 import BMI from "views/BMI"
 import Water from "views/Water"
+import Calories from "views/Calories"
 
 export const routes = [
     {
@@ -28,7 +29,7 @@ export const routes = [
     {
         name: 'Kalkulator kalorii',
         path: '/calories',
-        component: <div></div>,
+        component: <Calories />,
         icon: caloriesIcon,
     },
     {

@@ -1,5 +1,4 @@
 import React from 'react'
-import styled from 'styled-components'
 
 import Box from 'components/Box/Box'
 import FormField from 'components/FormField/FormField'
@@ -8,22 +7,13 @@ import Result from 'components/Result/Result'
 import Highlight from 'components/Highlight/Highlight'
 import Description from 'components/Description/Description'
 import FormWrapper from 'components/FormWrapper/FormWrapper'
-
-const Wrapper = styled.div`
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
+import AppWrapper from 'components/AppWrapper/AppWrapper'
 
 const BMI = () => {
     const [weight, setWeight] = React.useState('');
     const [height, setHeight] = React.useState('');
     const [bmi, setBmi] = React.useState('');
     const [bmiCategory, setBmiCategory] = React.useState('');
-    const [bmiCategoryColor, setBmiCategoryColor] = React.useState('');
     const [error, setError] = React.useState('');
 
     const appReset = () => {
@@ -31,7 +21,6 @@ const BMI = () => {
         setHeight('');
         setBmi('');
         setBmiCategory('');
-        setBmiCategoryColor('');
         setError('');
     }
 
@@ -52,24 +41,19 @@ const BMI = () => {
 
         if (bmi < 18.5) {
             setBmiCategory('niedowaga');
-            setBmiCategoryColor('#f5c6cb');
         } else if (bmi >= 18.5 && bmi < 25) {
             setBmiCategory('waga prawidłowa');
-            setBmiCategoryColor('#b2ebf2');
         } else if (bmi >= 25 && bmi < 30) {
             setBmiCategory('nadwaga');
-            setBmiCategoryColor('#ffecb3');
         } else if (bmi >= 30) {
             setBmiCategory('otyłość');
-            setBmiCategoryColor('#ff0000');
         } else {
             setBmiCategory('brak danych');
-            setBmiCategoryColor('#f5f5f5');
         }
     }
   
     return (
-      <Wrapper>
+      <AppWrapper>
         <Box>
           <h2>Kalkulator BMI</h2>
           <Description>Wskaźnik masy ciała (body mass index – BMI) jest obecnie najczęściej stosowaną metodą oceny nadwagi czy otyłości. Jest to iloraz masy ciała wyrażonej w kilogramach i wzrostu (w metrach) podniesionego do kwadratu. Pozwala on na rozróżnienie niedowagi, prawidłowej masy ciała, nadwagi oraz różnych stopni otyłości.</Description>
@@ -109,7 +93,7 @@ const BMI = () => {
             </>
           ) }
         </Box>
-      </Wrapper>
+      </AppWrapper>
     )
 }
 
